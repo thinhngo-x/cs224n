@@ -61,6 +61,6 @@ class ModelEmbeddings(nn.Module):
         output = self.conv(output)
         output = self.highway(output)
 
-        return output.view(sent_len, batch_size, -1)
+        return output.contigious().view(sent_len, batch_size, -1)
         ### END YOUR CODE
 
